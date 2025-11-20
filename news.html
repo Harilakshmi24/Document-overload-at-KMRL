@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News & Updates – Kochi Metro Document Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfcfc;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #004d99;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    nav {
+      background-color: #004d99;
+      padding: 15px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav li:hover {
+      text-decoration: underline;
+    }
+
+    .news-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .news-title {
+      text-align: center;
+      color: #004d99;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .news-card {
+      background-color: #ffffff;
+      border-left: 5px solid #004d99;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .news-card .date {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .news-card h3 {
+      margin: 0 0 10px;
+      color: #004d99;
+    }
+
+    .news-card p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #004d99;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>News & Updates</h1>
+    <p>Latest Milestones in Document Automation</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="nav.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="departmnet.html">Departments</a></li>
+      <li><a href="news.html">News & Updates</a></li>
+      <li><a href="login.html">Document Upload</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- 📰 News Section -->
+  <div class="news-container">
+    <div class="news-title">Recent Highlights</div>
+
+    <div class="news-card">
+      <div class="date">September 20, 2025</div>
+      <h3>🚀 Document Hub Prototype Launched</h3>
+      <p>The Kochi Metro Document Automation prototype is now live, featuring multilingual support and interactive modules for stakeholder review.</p>
+    </div>
+
+    <div class="news-card">
+      <div class="date">September 18, 2025</div>
+      <h3>📊 Hackathon Slide Deck Finalized</h3>
+      <p>Visual flowcharts, risk analysis, and branding elements are ready for the KMRL hackathon presentation.</p>
+    </div>
+
+    <div class="news-card">
+      <div class="date">September 15, 2025</div>
+      <h3>🧠 Feasibility Study Completed</h3>
+      <p>Document overload risks mapped across departments with proposed mitigation strategies and automation pathways.</p>
+    </div>
+
+    <div class="news-card">
+      <div class="date">September 10, 2025</div>
+      <h3>🔧 UI Enhancements Rolled Out</h3>
+      <p>New slide-down menus, image overlays, and animated charts added to improve user experience and accessibility.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kochi Metro Rail Limited. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

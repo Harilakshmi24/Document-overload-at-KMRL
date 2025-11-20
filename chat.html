@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.50" />
+    <title>KOCHI METRO – Digital Document Management Hub</title>
+
+    <link rel="icon" href="Screenshot 2025-09-18 152923.png" type="image/png" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(253, 252, 252);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            color: #004d99;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        nav.one {
+            background-color: #004d99;
+            padding: 15px 0;
+        }
+
+        nav.one ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav.one li {
+            margin: 0 60px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        nav.one li:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: flex-start;
+            padding: 40px 20px;
+            gap: 40px;
+        }
+
+        .left-column,
+        .right-column {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 0;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            width: 1000px;
+            height: 750px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding-left: 250px;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            animation: slide 500s linear infinite;
+            padding-left: 50px;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+
+            25% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-200%);
+            }
+
+            75% {
+                transform: translateX(-300%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .stats-box {
+      width: 25 0px;
+      max-width: 100%;
+      margin-top: 40px;
+      padding: 30px;
+      border: 2px solid #004d99;
+      border-radius: 12px;
+      background-color: #f0f8ff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      height: 300px;
+    }
+
+    .stat .label {
+      font-size: 40px;
+      color: #333;
+    }
+
+
+    .section-title {
+      font-size: 40px;
+      color: #004d99;
+      margin-bottom: 30px;
+      text-align: center;
+      padding-left: 30px;
+    }
+
+    .stat .number {
+      font-size: 48px;
+      font-weight: bold;
+      color: #004d99;
+    }
+
+
+
+
+
+        .right-column {
+            flex: 1;
+            padding-top: 20px;
+            padding-left: 40px;
+        }
+
+        .section-title {
+            padding-top: -10px;
+            font-size: 40px;
+            color: #004d99;
+            margin-bottom: 30px;
+            padding-left: 200px;
+
+        }
+
+        .document-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 100px;
+            justify-content: flex-start;
+            margin-top: 20px;
+            padding-left: 100px;
+            height: 1000px;
+
+        }
+
+        .doc-container {
+            position: relative;
+            width: 400px;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .doc-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        .doc-container:hover img {
+            filter: blur(4px);
+        }
+
+        .doc-container h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #004d99;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .doc-container:hover h1 {
+            opacity: 1;
+        }
+
+        .footer-boxes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #000;
+            padding: 60px 40px;
+            gap: 40px;
+        }
+
+        .footer-box {
+            background-color: #111;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-box h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #00bfff;
+        }
+
+        .footer-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-box li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .two {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+            padding-top: 100px;
+            padding-left: 90px;
+        }
+
+        .three {
+            padding-top: 10px;
+            height: 250px;
+            width: 260px;
+            margin-left: 800px;
+        }
+
+        .four {
+            padding-top: 20px;
+            width: 300px;
+            height: 100px;
+            padding-right: 20px;
+
+            padding-left: 600px;
+        }
+
+        .option {
+            size: 50px;
+        }
+
+        .stat {
+            text-align: center;
+            text-size-adjust: 20px;
+        }
+
+        .language-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            background-color: #004d99;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        .lang-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .lang-menu a {
+            color: #004d99;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+
+        .lang-menu a:hover {
+            background-color: #f0f8ff;
+        }
+
+        .us {
+            color: black;
+            font-size: 60px;
+            background-color: brown;
+        }
+
+        .address {
+            font-size: 40px;
+            color: rgb(55, 0, 255);
+
+        }
+
+        .aa {
+            font-size: 30px;
+            font-weight: 30px;
+        }
+
+        .bb {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .fife {
+            font-size: 90px;
+            font-weight: bold;
+        }
+
+        .auto {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .access {
+            font-size: 30px;
+            color: #004d99;
+            padding-left: 50px;
+
+        }
+
+        .error {
+            font-weight: bold;
+            font-size: 30px;
+
+        }
+
+        .single {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .role {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .friendly {
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+
+        .papers {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .Features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 40px;
+            padding: 20px 40px;
+        }
+
+        .feature-box {
+            flex: 1 1 400px;
+            max-width: 400px;
+        }
+
+        .impact-section {
+            background: linear-gradient(to bottom right, #f3fdfd, #f2f9fe);
+            padding: 60px 5%;
+        }
+
+        .impact-title {
+            text-align: center;
+            font-size: 36px;
+            color: #004d99;
+            margin-bottom: 10px;
+        }
+
+        .impact-subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        .impact-cards {
+            display: flex;
+
+            justify-content: center;
+            gap: 30px;
+            max-width: 65%;
+            margin: 0 auto;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .impact-icon {
+            background: #00a6c2;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+        }
+
+        .impact-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .impact-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #004d99;
+        }
+
+        .impact-note {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .impact-note.green {
+            color: green;
+        }
+
+        .impact-note.blue {
+            color: #1e90ff;
+        }
+
+        .impact-note.pink {
+            color: #d63384;
+        }
+
+
+        .upload-section {
+            max-width: 80%;
+            margin: 80px auto 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: beige;
+            height: 700px;
+        }
+
+        .upload-section h1 {
+            font-size: 67px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .upload-section p {
+            color: #555;
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .upload-box {
+            border: 2px dashed #b2dfdb;
+            padding: 30px 20px;
+            background-color: #ffffff;
+            border-radius: 22px;
+
+
+        }
+
+        .upload-box:hover {
+            border-color: #0097a7;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            font-size: 40px;
+            color: #00a6c2;
+            margin-bottom: 10px;
+        }
+
+        .upload-box h3 {
+            margin: 0;
+            font-size: 30px;
+            color: #004d99;
+        }
+
+        .upload-box p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .upload-btn {
+            background-color: #009688;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .upload-btn:hover {
+            background-color: #00796b;
+        }
+
+        .supported-formats {
+            font-size: 13px;
+            margin-top: 10px;
+            color: #888;
+        }
+
+        @media (max-width: 1024px) {
+            .impact-cards {
+                flex-direction: column;
+                align-items: center;
+                max-width: 90%;
+            }
+
+            .upload-section {
+                max-width: 90%;
+            }
+        }
+
+
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            width: 220px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            color: #0288d1;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .feature-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+
+        .comparison-container {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+
+        }
+
+        .comparison-container h1 {
+            margin-bottom: 30px;
+            font-size: 40px;
+            color: #333;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 80px;
+            font-size: 30px;
+            padding-left: 40px;
+
+        }
+
+
+        .card {
+            padding: 25px;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            text-align: left;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .manual {
+            background: #d9534f;
+        }
+
+        .automated {
+            background: #5cb85c;
+        }
+
+        @media (max-width: 1200px) {
+            .comparison-grid {
+                gap: 60px;
+            }
+
+            .comparison-container {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .comparison-container h1 {
+                font-size: 2em;
+            }
+
+            .card h2 {
+                font-size: 1.5rem;
+            }
+
+            .card ul li {
+                font-size: 1.2rem;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .comparison-container {
+                padding: 10px;
+            }
+
+            .comparison-container h1 {
+                font-size: 1.8em;
+            }
+
+            .card h2 {
+                font-size: 1.4rem;
+            }
+
+            .card ul li {
+                font-size: 1.1rem;
+            }
+        }
+
+        .faq-section {
+            max-width: 85%;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .faq-section h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .faq-section .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .faq-section .faq-container details {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .faq-section .faq-container summary {
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .faq-section .faq-container summary::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-section .faq-container details[open] summary::after {
+            content: "–";
+        }
+
+
+        .faq-section .faq-container details p {
+            margin: 10px 0 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1200px) {
+            .faq-section {
+                max-width: 80%;
+                padding: 25px;
+            }
+
+            .faq-section h1 {
+                font-size: 1.6rem;
+            }
+
+            .faq-section .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .faq-section {
+                max-width: 90%;
+                padding: 20px;
+            }
+
+            .faq-section h1 {
+                font-size: 1.4rem;
+            }
+
+            .faq-section .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .faq-section {
+                max-width: 95%;
+                padding: 15px;
+            }
+
+            .faq-section h1 {
+                font-size: 1.2rem;
+            }
+
+            .faq-section .faq-container summary {
+                font-size: 1rem;
+            }
+
+            .faq-section .faq-container details p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .subscribe-section {
+            background: linear-gradient(135deg, #1e90ff, #0077b6);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .subscribe-content {
+            max-width: 65%;
+            margin: 0 auto;
+        }
+
+
+        .subscribe-content h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+
+        .subscribe-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+
+        .subscribe-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 220px;
+            font-size: 1rem;
+        }
+
+        .subscribe-form button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background-color: #218838;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .subscribe-content {
+                max-width: 90%;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .subscribe-form button {
+                width: 100%;
+            }
+
+        }
+
+        .chatbot-logo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #004d99;
+            color: white;
+            font-size: 28px;
+            padding: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .chatbot-logo:hover {
+            background-color: #0066cc;
+            transform: scale(1.1);
+        }
+
+        .contact-section {
+            max-width: 65%;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .contact-section h1 {
+            font-size: 2rem;
+            color: #004d99;
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-detail {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #004d99;
+            margin-bottom: 5px;
+        }
+
+        .contact-sub {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                max-width: 90%;
+                padding: 30px 15px;
+            }
+
+            .contact-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-card {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Chatbot CSS from chat.css */
+        .chat-container {
+            width: 90%;
+            max-width: 500px;
+            height: 700px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: fixed;
+            bottom: 100px; /* Position above the chatbot button */
+            right: 25px;
+            z-index: 9998;
+            display: none;
+        }
+
+        .chat-header {
+            background-color: #004d99;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .language-selector {
+            /* No changes needed here, Flexbox handles it */
+        }
+
+        #language-select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .chat-box {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f7f9fc;
+        }
+
+        .message {
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background-color: #d1e7ff;
+            color: #333;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-message {
+            background-color: #e9ecef;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            background-color: white;
+        }
+
+        #user-input {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #user-input:focus {
+            border-color: #004d99;
+        }
+
+        #send-btn {
+            background-color: #004d99;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 25px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #send-btn:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="chatbot-logo" id="open-chatbot" title="Chat with us">💬</div>
+        <img class="two" src="india.png" alt="Kochi Metro Symbol" />
+        <img class="three" src="Screenshot 2025-09-18 152923.png" alt="Metro Image" />
+        <img class="four" src="Screenshot 2025-09-18 191115.png" />
+        <h1>KOCHI METRO – Digital Document Management Hub</h1>
+    </header>
+
+    <nav class="one">
+        <ul>
+            <a href="chat.html">
+                <li>Home</li>
+            </a>
+            <a href="about.html">
+                <li>About Us</li>
+            </a>
+            <a href="departmnet.html">
+                <li>Departments</li>
+            </a>
+            <a href="news.html">
+                <li>News & Updates</li>
+            </a>
+            <a href="login.html">
+                <li>Document Upload</li>
+            </a>
+            <a href="contact.html">
+                <li>Contact</li>
+            </a>
+            <div class="language-dropdown">
+                <button onclick="toggleLanguageMenu()" class="lang-btn">🌐 Language ▾</button>
+                <div id="languageMenu" class="lang-menu">
+                    <a href="#">English</a>
+                    <a href="#">Malayalam</a>
+                </div>
+            </div>
+            <a href="login.html">
+                <li>Login</li>
+            </a>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="left-column">
+            <div class="slider">
+                <div class="slides">
+                    <img src="kochi3.jpg" alt="Kochi Metro 1" />
+                    <img src="kochi.jpg" alt="Kochi Metro 2" />
+                    <img src="kochi2.jpg" alt="Kochi Metro 3" />
+                    <img src="kochi5.webp" alt="Kochi Metro 4" />
+                </div>
+            </div>
+            </a>
+
+            <div class="stats-box">
+                <h2>Quick Stats</h2>
+                <div class="stat">
+                    <div class="number">615</div>
+                    <div class="label">Total Documents</div>
+                </div>
+                <div class="stat">
+                    <div class="number">10</div>
+                    <div class="label">Categories</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <h2 class="section-title">Document Categories</h2>
+            <a href="login.html">
+                <div class="document-gallery">
+                    <div class="doc-container">
+                        <img src="doc1.png" alt="Engineer Drawings" />
+                        <h1>Engineer Drawings</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc2.png" alt="Maintenance" />
+                        <h1>Maintenance</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc3.png" alt="Incident Report" />
+                        <h1>Incident Report</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc4.png" alt="Vendor Invoice" />
+                        <h1>Vendor Invoice</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc5.png" alt="HR Policies" />
+                        <h1>HR Policies</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc6.png" alt="Environmental Impact" />
+                        <h1>Environmental Impact</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc7.png" alt="Safety Circular" />
+                        <h1>Safety Circular</h1>
+                    </div>
+                    <div class="doc-container">
+                        <img src="doc8.png" alt="Regulatory Director" />
+                        <h1>Regulatory Director</h1>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </a>
+    <center>
+        <h1 class="us">ABOUT US</h1>
+        <h2 class="address">Addressing The Document Overload Challenge </h2>
+        <h5 class="aa">Kochi Metro Rail LImited(KMRL) handles thousand of document daily across
+            operations,Maintenance,safety
+            protocols and administration processes.The current manual document Management system leads to inefficiencies,delay
+            in information retrieval and significance paper waste </h5>
+        <h4 class="bb">Our automated solution transform how KMRL manages its document ecosystem.creating a
+            streamlined,digital-first approach that enhaces operational efficiency while reducing environmental impact</h4>
+    </center>
+</body>
+
+</html>
+<div class="impact-section">
+    <h1 class="impact-title">Real-Time Impact Metrics</h1>
+    <p class="impact-subtitle">See the live impact of our document automation solution across KMRL operations</p>
+
+    <div class="impact-cards">
+        <div class="impact-card">
+            <div class="impact-icon">📄</div>
+            <h3>Documents Processed</h3>
+            <div class="impact-value">1,25,847+</div>
+            <div class="impact-note green">+23% this month</div>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-icon">⏱️</div>
+            <h3>Time Saved</h3>
+            <div class="impact-value">8,456 hours</div>
+            <div class="impact-note blue">95% reduction</div>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-icon">📈</div>
+            <h3>Efficiency Gain</h3>
+            <div class="impact-value">312%</div>
+            <div class="impact-note pink">vs manual process</div>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-icon">🌿</div>
+            <h3>Paper Saved</h3>
+            <div class="impact-value">89K sheets</div>
+            <div class="impact-note green">Environmental impact</div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="upload-section">
+    <h1>Test Document Upload</h1>
+    <p>Upload your documents to experience our AI-powered processing system in real-time</p>
+
+    <div class="upload-box">
+        <div class="upload-icon">📤</div>
+        <h3>Upload Documents</h3>
+        <p>Drag and drop files here, or click to browse</p>
+        <button class="upload-btn">Choose Files</button>
+        <div class="supported-formats">
+            Supported formats: PDF, DOC, DOCX, TXT, JPG, PNG, GIF (Max 10MB each)
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <div class="feature-title">AI-Powered Analysis</div>
+            <div class="feature-desc">Advanced OCR and NLP extract key information automatically</div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">Instant Processing</div>
+            <div class="feature-desc">Documents are processed and indexed within seconds</div>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Secure & Private</div>
+            <div class="feature-desc">Enterprise-grade security ensures your data stays protected</div>
+        </div>
+    </div>
+</div>
+
+<div class="comparison-container">
+    <h1>Transformation Comparison</h1>
+    <div class="comparison-grid">
+
+        <div class="card manual">
+            <h2>📄 Manual Process</h2>
+            <ul>
+                <li>Paper-based filing system</li>
+                <li>40 hours to find documents</li>
+                <li>High human error rate (10%)</li>
+                <li>Multiple physical copies needed</li>
+                <li>Limited access & collaboration</li>
+                <li>Environmental waste</li>
+            </ul>
+        </div>
+
+        <div class="card automated">
+            <h2>⚡ Automated Solution</h2>
+            <ul>
+                <li>Digital cloud repository</li>
+                <li>Instant search & retrieval</li>
+                <li>AI validation (99.8% accuracy)</li>
+                <li>Single digital source</li>
+                <li>Real-time collaboration</li>
+                <li>95% paper reduction</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+    <p class="subtitle">
+        Get answers to common questions about our document automation solution.
+    </p>
+
+    <div class="faq-container">
+
+        <details>
+            <summary>How accurate is the document automation system?</summary>
+            <p>Our system uses AI validation with 99.8% accuracy, ensuring minimal errors in document processing.</p>
+        </details>
+
+        <details>
+            <summary>What types of documents can be processed?</summary>
+            <p>It supports invoices, contracts, forms, reports, and other structured or semi-structured documents.</p>
+        </details>
+
+        <details>
+            <summary>How long does implementation take?</summary>
+            <p>Implementation typically takes 2–4 weeks depending on the complexity of your workflows.</p>
+        </details>
+
+        <details>
+            <summary>Can the system integrate with existing records management software?</summary>
+            <p>Yes, it offers API-based integration with most major records management platforms.</p>
+        </details>
+
+        <details>
+            <summary>What training is provided for staff?</summary>
+            <p>We provide onboarding sessions, user manuals, and ongoing support to ensure smooth adoption.</p>
+        </details>
+
+        <details>
+            <summary>What’s the cost of the solution?</summary>
+            <p>Pricing is based on usage volume and features. Contact our sales team for a tailored quote.</p>
+        </details>
+
+    </div>
+</section>
+
+<section class="subscribe-section">
+    <div class="subscribe-content">
+        <h1>Stay Updated on Our Progress</h1>
+        <p>Get notified about project milestones, feature releases, and implementation updates.</p>
+
+        <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+<section class="contact-section">
+    <h1>Get in Touch</h1>
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h2>📞 Phone</h2>
+            <p class="contact-detail">+91 484 351 3000</p>
+            <p class="contact-sub">Mon–Fri 9 AM–6 PM</p>
+        </div>
+
+
+        <div class="contact-card">
+            <h2>📧 Email</h2>
+            <p class="contact-detail">info@kmrl.com</p>
+            <p class="contact-sub">We'll respond within 24 hours</p>
+        </div>
+
+        <div class="contact-card">
+            <h2>🏢 Office</h2>
+            <p class="contact-detail">KMRL House, Edappally</p>
+            <p class="contact-sub">Kochi, Kerala 682024</p>
+        </div>
+    </div>
+</section>
+
+<hr>
+<center>
+    <h1 class="fife">Key Features & Benefits</h1>
+    <h2 class="auto">our comprehensive automation solution delivers measurable improvements across all document management
+        process</h2>
+</center>
+<br><br>
+<div class="Features" style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 40px; padding: 20px;">
+    <div style="flex: 1 1 400px; max-width: 500px;">
+        <h1 class="access">Faster Document Access</h1>
+        <h2 class="and">Instant search and retrieval of document with AI-powered categories and indexing</h2>
+    </div>
+
+    <div style="flex: 1 1 400px; max-width: 500px;">
+        <h1 class="errors">Reduced Error</h1>
+        <h2 class="validaion1">Automated validation and quality checks eliminate human errors and ensure data accuracy</h2>
+    </div>
+
+    <div style="flex: 1 1 400px; max-width: 500px;">
+        <h1 class="single">Centralized Repository</h1>
+        <h2 class="role">Single source of truth for all documents with role-based access and version control</h2>
+    </div>
+
+    <div style="flex: 1 1 400px; max-width: 500px;">
+        <h1 class="friend">Eco-Friendly Paperless Workflow</h1>
+        <h2 class="paper">Reduce paper consumption by 90% and contribute to sustainable metro operations</h2>
+    </div>
+</div>
+
+</div>
+<div class="footer-boxes">
+    <div class="footer-box">
+        <h1>Modules</h1>
+        <ul>
+            <li>Document Upload</li>
+            <li>AI Summarization</li>
+            <li>Search & Filter</li>
+        </ul>
+    </div>
+
+    <div class="footer-box">
+        <h1>FAQs</h1>
+        <ul>
+            <li>How to upload Documents</li>
+            <li>Document Classification</li>
+            <li>Search Guidelines</li>
+        </ul>
+    </div>
+
+    <div class="footer-box">
+        <h1>Contact Information</h1>
+        <ul>
+            <li>Kochi Metro Rail Limited</li>
+            <li>Metro Bhavan, Palarivattom</li>
+            <li>Kochi-682025, Kerala</li>
+        </ul>
+    </div>
+</div>
+
+<div class="chat-container" id="chatbot-container">
+    <div class="chat-header">
+        <div class="language-selector">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="ml">Malayalam</option>
+            </select>
+        </div>
+        <h3>Kochi Metro AI Assistant</h3>
+        <button class="close-btn" id="close-chatbot">X</button>
+    </div>
+    <div class="chat-box" id="chat-box">
+        <div class="message bot-message" id="initial-message">Hello! Welcome to the Kochi Metro Digital Document Hub. How can I assist you today?</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<script>
+  
+    function toggleLanguageMenu() {
+        const menu = document.getElementById("languageMenu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.lang-btn')) {
+            const menu = document.getElementById("languageMenu");
+            if (menu && menu.style.display === "block") {
+                menu.style.display = "none";
+            }
+        }
+    };
+
+   
+    document.addEventListener('DOMContentLoaded', () => {
+        const openChatbotBtn = document.getElementById('open-chatbot');
+        const closeChatbotBtn = document.getElementById('close-chatbot');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const languageSelect = document.getElementById('language-select');
+        const initialMessageDiv = document.getElementById('initial-message');
+
+        let currentLanguage = 'en';
+
+
+        const translations = {
+            'en': {
+                'greeting': "Hello! Welcome to the Kochi Metro Digital Document Hub. How can I assist you today?",
+                'unknown': "I'm sorry, I don't have an answer for that right now. Please try asking about our features, documents, or contact information.",
+                'responses': {
+                    "hello": "Hello! How can I assist you with Kochi Metro's Digital Document Management Hub?",
+                    "hi": "Hi there! What can I help you find or do today?",
+                    "about us": "Kochi Metro's Digital Document Management Hub is a solution to automate document management, enhance efficiency, and reduce paper waste.",
+                    "documents": "We currently have over 600 documents across various categories like Engineering Drawings, Maintenance, and HR Policies.",
+                    "features": "Our key features include faster document access, reduced errors with AI validation, a centralized repository, and eco-friendly paperless workflows.",
+                    "contact": "You can contact us at +91 484 351 3000 or email us at info@kmrl.com.",
+                    "upload": "To upload documents, you can use the 'Document Upload' section on our main page after logging in.",
+                    "thank you": "You're welcome! Is there anything else I can help with?",
+                    "bye": "Goodbye! Have a great day. 😊"
+                },
+                'placeholders': {
+                    'input': 'Type your message...',
+                    'send': 'Send'
+                }
+            },
+            'ml': {
+                'greeting': "നമസ്കാരം! കൊച്ചി മെട്രോയുടെ ഡിജിറ്റൽ ഡോക്യുമെന്റ് ഹബ്ബിലേക്ക് സ്വാഗതം. ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കും?",
+                'unknown': "ക്ഷമിക്കണം, എനിക്കിപ്പോൾ അതിനുള്ള ഉത്തരം അറിയില്ല. ഞങ്ങളുടെ ഫീച്ചറുകൾ, രേഖകൾ, അല്ലെങ്കിൽ ബന്ധപ്പെടാനുള്ള വിവരങ്ങൾ എന്നിവയെക്കുറിച്ച് ചോദിക്കാൻ ശ്രമിക്കുക.",
+                'responses': {
+                    "hello": "നമസ്കാരം! കൊച്ചി മെട്രോയുടെ ഡിജിറ്റൽ ഡോക്യുമെന്റ് മാനേജ്‌മെന്റ് ഹബ്ബുമായി ബന്ധപ്പെട്ട് ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കും?",
+                    "hi": "ഹായ്! ഇന്ന് ഞാൻ നിങ്ങളെ എങ്ങനെ സഹായിക്കും?",
+                    "about us": "കൊച്ചി മെട്രോയുടെ ഡിജിറ്റൽ ഡോക്യുമെന്റ് മാനേജ്‌മെന്റ് ഹബ്ബ് എന്നത് രേഖകളുടെ മാനേജ്‌മെന്റ് ഓട്ടോമേറ്റ് ചെയ്യാനും കാര്യക്ഷമത വർദ്ധിപ്പിക്കാനും പേപ്പർ മാലിന്യം കുറയ്ക്കാനുമുള്ള ഒരു പരിഹാരമാണ്.",
+                    "documents": "എഞ്ചിനീയറിംഗ് ഡ്രോയിംഗുകൾ, മെയിന്റനൻസ്, എച്ച്ആർ പോളിസികൾ തുടങ്ങിയ വിവിധ വിഭാഗങ്ങളിലായി ഞങ്ങൾക്ക് 600-ൽ അധികം രേഖകൾ ഉണ്ട്.",
+                    "features": "വേഗത്തിലുള്ള രേഖാ ലഭ്യത, AI വെരിഫിക്കേഷൻ വഴി പിഴവുകൾ കുറയ്ക്കുക, കേന്ദ്രീകൃത ശേഖരം, പരിസ്ഥിതി സൗഹൃദമായ പേപ്പർരഹിത പ്രവർത്തനങ്ങൾ എന്നിവയാണ് ഞങ്ങളുടെ പ്രധാന സവിശേഷതകൾ.",
+                    "contact": "ഞങ്ങളെ +91 484 351 3000 എന്ന നമ്പറിൽ വിളിക്കുകയോ info@kmrl.com എന്ന ഇമെയിൽ വിലാസത്തിൽ ബന്ധപ്പെടുകയോ ചെയ്യാം.",
+                    "upload": "രേഖകൾ അപ്‌ലോഡ് ചെയ്യാൻ, ലോഗിൻ ചെയ്ത ശേഷം ഞങ്ങളുടെ പ്രധാന പേജിലെ 'Document Upload' എന്ന ഭാഗം ഉപയോഗിക്കാം.",
+                    "thank you": "സ്വാഗതം! മറ്റെന്തെങ്കിലും സഹായം വേണോ?",
+                    "bye": "പോയിവരട്ടെ! നല്ലൊരു ദിവസം നേരുന്നു. 😊"
+                },
+                'placeholders': {
+                    'input': 'നിങ്ങളുടെ സന്ദേശം ടൈപ്പ് ചെയ്യുക...',
+                    'send': 'അയയ്ക്കുക'
+                }
+            }
+        };
+
+   
+        const setChatbotLanguage = (lang) => {
+            currentLanguage = lang;
+            const greeting = translations[lang].greeting;
+            const initialMessageDiv = document.getElementById('initial-message');
+            initialMessageDiv.textContent = greeting;
+            updatePlaceholders(lang);
+        };
+        
+    
+        const updatePlaceholders = (lang) => {
+            userInput.placeholder = translations[lang].placeholders.input;
+            sendBtn.textContent = translations[lang].placeholders.send;
+        };
+
+        const sendMessage = () => {
+            const userText = userInput.value.trim().toLowerCase();
+            if (userText === '') return;
+
+           
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'message user-message';
+            userMessageDiv.textContent = userInput.value;
+            chatBox.appendChild(userMessageDiv);
+            userInput.value = '';
+
+          
+            let botResponse = translations[currentLanguage].unknown;
+            const currentResponses = translations[currentLanguage].responses;
+            for (const key in currentResponses) {
+                if (userText.includes(key)) {
+                    botResponse = currentResponses[key];
+                    break;
+                }
+            }
+
+            
+            setTimeout(() => {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'message bot-message';
+                botMessageDiv.textContent = botResponse;
+                chatBox.appendChild(botMessageDiv);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 500);
+        };
+
+        openChatbotBtn.addEventListener('click', () => {
+            chatbotContainer.style.display = 'flex';
+        });
+
+        closeChatbotBtn.addEventListener('click', () => {
+            chatbotContainer.style.display = 'none';
+        });
+
+        sendBtn.addEventListener('click', sendMessage);
+
+        userInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        languageSelect.addEventListener('change', (event) => {
+            setChatbotLanguage(event.target.value);
+           
+            chatBox.innerHTML = `<div class="message bot-message" id="initial-message">${translations[currentLanguage].greeting}</div>`;
+        });
+    });
+</script>
+
+</body>
+</html>

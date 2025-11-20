@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departments & Documents – Kochi Metro Document Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfcfc;
+      color: #333;
+    }
+
+    header {
+      background-color: #004d99;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    nav {
+      background-color: #004d99;
+      padding: 15px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 25px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav li:hover a {
+      text-decoration: underline;
+    }
+
+    .documents-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .documents-title {
+      text-align: center;
+      color: #004d99;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Fixed 4 columns */
+      gap: 25px;
+    }
+
+    @media screen and (max-width: 992px) {
+      .doc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .doc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .doc-container {
+      background-color: #e7f0ff;
+      border: 1.5px solid #004d99;
+      border-radius: 12px;
+      padding: 20px 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .doc-container:hover {
+      background-color: #c9defd;
+    }
+
+    .doc-container img {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 12px;
+    }
+
+    .doc-container h1 {
+      font-size: 1.1rem;
+      color: #004d99;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    footer {
+      background-color: #004d99;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Departments & Documents</h1>
+    <p>Explore Our Operational Divisions & Document Categories</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="nav.html">Home</a></li>
+      <li><a href="About.html">About Us</a></li>
+      <li><a href="departmnet.html">Departments</a></li>
+      <li><a href="news.html">News & Updates</a></li>
+      <li><a href="login.html">Document Upload</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="documents-container">
+    <div class="documents-title">Document Categories</div>
+
+    <div class="doc-grid">
+      <a href="login.html"><div class="doc-container">
+        <img src="doc1.png" alt="Engineer Drawings" />
+        <h1>Engineer Drawings</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc2.png" alt="Maintenance" />
+        <h1>Maintenance</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc3.png" alt="Incident Report" />
+        <h1>Incident Report</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc4.png" alt="Vendor Invoice" />
+        <h1>Vendor Invoice</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc5.png" alt="HR Policies" />
+        <h1>HR Policies</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc6.png" alt="Environmental Impact" />
+        <h1>Environmental Impact</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc7.png" alt="Safety Circular" />
+        <h1>Safety Circular</h1>
+      </div></a>
+
+      <a href="login.html"><div class="doc-container">
+        <img src="doc8.png" alt="Regulatory Director" />
+        <h1>Regulatory Director</h1>
+      </div></a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kochi Metro Rail Limited. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+    

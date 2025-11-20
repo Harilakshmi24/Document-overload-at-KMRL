@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Kochi Metro Document Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfcfc;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #004d99;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+
+    nav {
+      background-color: #004d99;
+      padding: 15px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav li:hover {
+      text-decoration: underline;
+    }
+
+    .about-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .about-title {
+      text-align: center;
+      color: #004d99;
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .mission-vision {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.4s ease forwards;
+    }
+
+    .mv-box {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      background-color: #f0f8ff;
+      border: 2px solid #004d99;
+      border-radius: 10px;
+    }
+
+    .mv-box h2 {
+      color: #004d99;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .mv-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 60px;
+      padding: 20px;
+      background-color: #e6f0ff;
+      border-radius: 10px;
+    }
+
+    .counter-box {
+      text-align: center;
+    }
+
+    .counter-box h3 {
+      font-size: 2rem;
+      color: #004d99;
+    }
+
+    .counter-box p {
+      font-weight: 600;
+    }
+
+    .why-us {
+      margin-top: 60px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .why-box {
+      flex: 1;
+      min-width: 250px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 5px solid #004d99;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .why-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .why-box h4 {
+      color: #004d99;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #004d99;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .about-content,
+      .mission-vision,
+      .counters,
+      .why-us {
+        flex-direction: column;
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <h1>About Us</h1>
+    <p>Your Partner in Streamlined Document Management</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="chat.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="departmnet.html">Departments</a></li>
+      <li><a href="news.html">News & Updates</a></li>
+      <li><a href="login.html">Document Upload</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="about-container">
+
+    <div class="about-title">Our Story</div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>Kochi Metro Rail Limited (KMRL) handles thousands of documents every day—across operations, maintenance, safety protocols, and administration. The existing manual system faces delays in information retrieval, high dependency on paper, and challenges in version control and collaboration.</p>
+        <p>We built this Digital Document Management Hub to transform how documents are processed: making them searchable, secure, accessible in real-time, and reducing environmental impact through paper reduction.</p>
+      </div>
+      <div class="about-image">
+        <img src="doc1.png" alt="Team working on document management" />
+      </div>
+    </div>
+
+    <div class="mission-vision">
+      <div class="mv-box">
+        <h2>Mission</h2>
+        <p>To provide a digital-first, AI-powered platform that streamlines document workflows, enhances collaboration, and fosters transparency across all departments of KMRL.</p>
+      </div>
+      <div class="mv-box">
+        <h2>Vision</h2>
+        <p>To become a sustainable, paperless organization known for operational excellence, innovation, and high user satisfaction in all document management processes.</p>
+      </div>
+    </div>
+
+    <div class="why-us">
+      <div class="why-box">
+        <h4>🔐 Secure Platform</h4>
+        <p>Advanced encryption and role-based access to protect your sensitive documents.</p>
+      </div>
+      <div class="why-box">
+        <h4>⚡ Fast Retrieval</h4>
+        <p>Instant search and version history help teams find documents quickly.</p>
+      </div>
+      <div class="why-box">
+        <h4>🌱 Eco Friendly</h4>
+        <p>Digital workflows reduce paper use and support green office initiatives.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kochi Metro Rail Limited. All rights reserved.</p>
+  </footer>
+
